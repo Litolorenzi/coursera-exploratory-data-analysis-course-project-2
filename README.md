@@ -26,13 +26,13 @@ Here are the first few rows.
 
 
 
-1##     fips      SCC Pollutant Emissions  type year
-2## 4  09001 10100401  PM25-PRI    15.714 POINT 1999
-3## 8  09001 10100404  PM25-PRI   234.178 POINT 1999
-4## 12 09001 10100501  PM25-PRI     0.128 POINT 1999
-5## 16 09001 10200401  PM25-PRI     2.036 POINT 1999
-6## 20 09001 10200504  PM25-PRI     0.388 POINT 1999
-6## 24 09001 10200602  PM25-PRI     1.490 POINT 1999
+##    fips      SCC Pollutant Emissions  type year
+## 4  09001 10100401  PM25-PRI    15.714 POINT 1999
+## 8  09001 10100404  PM25-PRI   234.178 POINT 1999
+## 12 09001 10100501  PM25-PRI     0.128 POINT 1999
+## 16 09001 10200401  PM25-PRI     2.036 POINT 1999
+## 20 09001 10200504  PM25-PRI     0.388 POINT 1999
+## 24 09001 10200602  PM25-PRI     1.490 POINT 1999
 
 ##     fips      SCC Pollutant Emissions  type year
 ## 4  09001 10100401  PM25-PRI    15.714 POINT 1999
@@ -41,6 +41,7 @@ Here are the first few rows.
 ## 16 09001 10200401  PM25-PRI     2.036 POINT 1999
 ## 20 09001 10200504  PM25-PRI     0.388 POINT 1999
 ## 24 09001 10200602  PM25-PRI     1.490 POINT 1999
+
 fips: A five-digit number (represented as a string) indicating the U.S. county
 SCC: The name of the source as indicated by a digit string (see source code classification table)
 Pollutant: A string indicating the pollutant
@@ -56,13 +57,15 @@ You can read each of the two files using the readRDS() function in R. For exampl
 following code:
 
 
-
-1## This first line will likely take a few seconds. Be patient!
+
+## This first line will likely take a few seconds. Be patient!
 2NEI <- readRDS("summarySCC_PM25.rds")
 3SCC <- readRDS("Source_Classification_Code.rds")
+
 ## This first line will likely take a few seconds. Be patient!
 NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
+
 as long as each of those files is in your current working directory (check by calling dir() and see if those files are in the listing).
 Assignmentmenos 
 The overall goal of this assignment is to explore the National Emissions Inventory database and see what it say about fine particulate 
@@ -73,19 +76,24 @@ Questions
 You must address the following questions and tasks in your exploratory analysis. For each question/task you will need to make a 
 single plot. Unless specified, you can use any plotting system in R to make your plot.
 
-Have total emissions from PM2.5 decreased in the United States from 1999 to 2008? Using the base plotting system, make a plot 
-showing the total PM2.5 emission from all sources for each of the years 1999, 2002, 2005, and 2008.
-Have total emissions from PM2.5 decreased in the Baltimore City, Maryland (fips == "24510") from 1999 to 2008? Use the base 
-plotting system to make a plot answering this question.
-Of the four types of sources indicated by the type (point, nonpoint, onroad, nonroad) variable, which of these four sources 
-have seen decreases in emissions from 1999–2008 for Baltimore City? Which have seen increases in emissions from 1999–2008? 
+## Have total emissions from PM2.5 decreased in the United States from 1999 to 2008? 
+Using the base plotting system, make a plot showing the total PM2.5 emission from all sources for each of the years 1999, 2002, 
+2005, and 2008.
+
+## Have total emissions from PM2.5 decreased in the Baltimore City, Maryland (fips == "24510") from 1999 to 2008? 
+Use the base plotting system to make a plot answering this question.
+
+## Of the four types of sources indicated by the type (point, nonpoint, onroad, nonroad) variable, which of these four sources 
+## have seen decreases in emissions from 1999–2008 for Baltimore City? Which have seen increases in emissions from 1999–2008? 
 Use the ggplot2 plotting system to make a plot answer this question.
-Across the United States, how have emissions from coal combustion-related sources changed from 1999–2008?
-How have emissions from motor vehicle sources changed from 1999–2008 in Baltimore City?
+
+## Across the United States, how have emissions from coal combustion-related sources changed from 1999–2008?
+## How have emissions from motor vehicle sources changed from 1999–2008 in Baltimore City?
 Compare emissions from motor vehicle sources in Baltimore City with emissions from motor vehicle sources in Los Angeles County, 
-California (fips == "06037"). Which city has seen greater changes over time in motor vehicle emissions?
-Making and Submitting Plotsmenos 
-For each plot you should
+California (fips == "06037"). 
+
+## Which city has seen greater changes over time in motor vehicle emissions?
+Making and Submitting Plotsmenos For each plot you should
 
 Construct the plot and save it to a PNG file.
 Create a separate R code file (plot1.R, plot2.R, etc.) that constructs the corresponding plot, i.e. code in plot1.R constructs the 
